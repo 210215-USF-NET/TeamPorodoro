@@ -34,8 +34,7 @@ namespace PomMvc.Controllers
 
         public ActionResult ViewNotes(string username)
         {
-            ViewBag.username = username;
-            return View();
+            return View(_pomBL.GetNoteRecords(username).Select(n => _mapper.cast2NoteCRVM(n)).ToList());
         }
 
         // GET: NoteController/Create

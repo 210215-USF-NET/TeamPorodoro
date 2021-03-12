@@ -1,7 +1,7 @@
 ﻿@model PomMvc.Models.NoteCRVM
 
 @{
-    ViewData["Title"] = "CreateNote";
+    ViewData["Title"] = "Create Note";
 }
 
 <h1>Create a Note!</h1>
@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CreateNote">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="UserName" class="control-label"></label>

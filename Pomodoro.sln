@@ -4,6 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomBL", "PomBL\PomBL.csproj", "{0BA6104D-4C06-4C45-A33A-4DDD9B195F72}"
+<<<<<<< HEAD
+	ProjectSection(ProjectDependencies) = postProject
+		{39DB8C50-0F1D-4A6E-ABB9-68D8C513C92B} = {39DB8C50-0F1D-4A6E-ABB9-68D8C513C92B}
+		{F4A80079-96CB-4598-9BC2-006A1A7EF218} = {F4A80079-96CB-4598-9BC2-006A1A7EF218}
+	EndProjectSection
+=======
+>>>>>>> fe835a545a5dc5940f9b5c964fdab6ddf2f685d9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomDL", "PomDL\PomDL.csproj", "{F4A80079-96CB-4598-9BC2-006A1A7EF218}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -13,6 +20,13 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomModels", "PomModels\PomModels.csproj", "{39DB8C50-0F1D-4A6E-ABB9-68D8C513C92B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomMvc", "PomMvc\PomMvc.csproj", "{EB2560AD-2381-4187-991F-F5A0818F2B54}"
+<<<<<<< HEAD
+	ProjectSection(ProjectDependencies) = postProject
+		{0BA6104D-4C06-4C45-A33A-4DDD9B195F72} = {0BA6104D-4C06-4C45-A33A-4DDD9B195F72}
+		{39DB8C50-0F1D-4A6E-ABB9-68D8C513C92B} = {39DB8C50-0F1D-4A6E-ABB9-68D8C513C92B}
+	EndProjectSection
+=======
+>>>>>>> fe835a545a5dc5940f9b5c964fdab6ddf2f685d9
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +91,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+<<<<<<< HEAD
+		SolutionGuid = {3DEBCF74-4EEA-427B-9EB5-9E15CF294FA1}
+=======
 		SolutionGuid = {C27EE9E6-F6DF-405E-9D49-CABFBF4437B0}
+>>>>>>> fe835a545a5dc5940f9b5c964fdab6ddf2f685d9
 	EndGlobalSection
 EndGlobal

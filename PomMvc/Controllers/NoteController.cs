@@ -23,5 +23,31 @@ namespace PomMvc.Controllers
         {
             return View();
         }
+
+        // GET: HeroController/Create
+        public ActionResult Create()
+        {
+            return View("CreateHero");
+        }
+
+        // POST: HeroController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(NoteCRVM newNote)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _pomBL.CreateNoteRecord(_mapper.cast2Note(newNote));
+                    return RedirectToAction(nameof(Index));
+                }
+                catch
+                {
+                    return View();
+                }
+            }
+            return View();
+        }
     }
 }

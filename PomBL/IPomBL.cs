@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PomBL
 {
-    interface IPomBL
+    public interface IPomBL
     {
     }
 }

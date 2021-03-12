@@ -21,5 +21,25 @@ namespace PomMvc.Models
                 Note = note2BCasted.Note
             };
         }
+        public UserCRVM cast2UserCRVM(User user2BCasted)
+        {
+            return new UserCRVM
+            {
+                Id = user2BCasted.Id,
+                UserUserName = user2BCasted.UserUserName,
+                UserFirstName = user2BCasted.UserFirstName,
+                UserLastName = user2BCasted.UserLastName
+            };
+        }
+        public User cast2User(UserCRVM user2BCasted)
+        {
+            return new User
+            {
+                Id = user2BCasted.Id,
+                UserUserName = user2BCasted.UserUserName,
+                UserFirstName = user2BCasted.UserFirstName,
+                UserLastName = user2BCasted.UserLastName
+            };
+        }
     }
 }

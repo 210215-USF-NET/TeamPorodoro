@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PomBL;
+using PomMvc.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,13 @@ namespace PomMvc.Controllers
 {
     public class PomoController : Controller
     {
+        private readonly IPomBL _pomBL;
+        private readonly IMapper _mapper;
+        public PomoController(IPomBL pomBL, IMapper mapper)
+        {
+            _pomBL = pomBL;
+            _mapper = mapper;
+        }
         // GET: PomoController
         public ActionResult Index()
         {

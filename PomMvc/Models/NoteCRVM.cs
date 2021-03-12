@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace PomModels
+namespace PomMvc.Models
 {
-    public class NoteRecord
+    public class NoteCRVM
     {
-        public int ID { get; set; }
+        [Required]
         public string UserName { get; set; }
-        public DateTime CreationTime { get; set; }
+        [Required]
         public string Note { get; set; }
     }
 }

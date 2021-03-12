@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PomDL
 {
-    class PomDBContext : DbContext
+    public class PomDBContext : DbContext
     {
 
         public PomDBContext(DbContextOptions options) : base(options)
@@ -36,6 +36,14 @@ namespace PomDL
                .HasMany(u => u.NoteRecords)
                .WithOne()
                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<NoteRecord>()
+                .Property(u => u.ID)
+                .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Pomodoro>()
+                .Property(u => u.ID)
+                .ValueGeneratedOnAdd();
         }
     }
 }

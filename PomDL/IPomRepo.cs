@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PomDL
 {
-    interface IPomRepo
+    public interface IPomRepo
     {
     }
 }

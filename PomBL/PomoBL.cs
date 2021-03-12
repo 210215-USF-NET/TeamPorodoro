@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PomBL
 {
-    class PomBL : IPomBL
+    public class PomoBL : IPomBL
     {
     }
 }

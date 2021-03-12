@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PomBL;
+using PomDL;
 
 namespace PomMvc
 {
@@ -24,6 +27,11 @@ namespace PomMvc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<PomDBContext>( options => options.UseNpgsql(Configuration.GetConnectionString("PomodoroApp")));
+            services.AddScoped<IPomBL, PomoBL>();
+            services.AddScoped<IPomRepo, PomRepoDB>();
+            //services.AddScoped<IMapper, Mapper>();
+            services.AddDistributedMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

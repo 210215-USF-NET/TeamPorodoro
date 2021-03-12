@@ -13,7 +13,7 @@ namespace PomMvc.Models
         [DisplayName("UserName")]
         [Required]
         public string UserUserName { get; set; }
-        [DisplayName("Last Name")]
+        [DisplayName("First Name")]
         [Required]
         public string UserFirstName { get; set; }
         [DisplayName("Last Name")]

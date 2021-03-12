@@ -8,5 +8,10 @@ namespace PomDL
 {
     class PomRepoDB : IPomRepo
     {
+        private readonly PomDBContext _context;
+        public PomRepoDB(PomDBContext context)
+        {
+            _context = context;
+        }
     }
 }

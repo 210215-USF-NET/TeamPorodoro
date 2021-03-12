@@ -17,32 +17,36 @@ namespace PomDL
 
         public NoteRecord CreateNoteRecord(NoteRecord newNoteRecord)
         {
-            throw new NotImplementedException();
+            _context.NoteRecords.Add(newNoteRecord);
+            _context.SaveChanges();
+            return newNoteRecord;
         }
 
         public User CreateUser(User newUser)
         {
-            throw new NotImplementedException();
+            _context.Users.Add(newUser);
+            _context.SaveChanges();
+            return newUser;
         }
 
         public List<NoteRecord> GetAllNoteRecords()
         {
-            throw new NotImplementedException();
+            return _context.NoteRecords.Select(note => note).ToList();
         }
 
         public List<NoteRecord> GetNoteRecords(string userName)
         {
-            throw new NotImplementedException();
+            return _context.NoteRecords.Where(note => note.UserName == userName).ToList();
         }
 
         public List<User> GetUsers()
         {
-            throw new NotImplementedException();
+            return _context.Users.Select(user => user).ToList();
         }
 
         public User SearchUser(string userName)
         {
-            throw new NotImplementedException();
+            return _context.Users.Find(userName);
         }
     }
 }

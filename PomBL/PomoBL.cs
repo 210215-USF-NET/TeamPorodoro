@@ -4,39 +4,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PomModels;
+using PomDL;
 
 namespace PomBL
 {
     public class PomoBL : IPomBL
     {
+        private IPomRepo _repo;
+        public PomoBL(IPomRepo repo)
+        {
+            _repo = repo;
+        }
         public NoteRecord CreateNoteRecord(NoteRecord newNoteRecord)
         {
-            throw new NotImplementedException();
+            return _repo.CreateNoteRecord(newNoteRecord);
         }
 
         public User CreateUser(User newUser)
         {
-            throw new NotImplementedException();
+            return _repo.CreateUser(newUser);
         }
 
         public List<NoteRecord> GetAllNoteRecords()
         {
-            throw new NotImplementedException();
+            return _repo.GetAllNoteRecords();
         }
 
         public List<NoteRecord> GetNoteRecords(string userName)
         {
-            throw new NotImplementedException();
+            return _repo.GetNoteRecords(userName);
         }
 
         public List<User> GetUsers()
         {
-            throw new NotImplementedException();
+            return _repo.GetUsers();
         }
 
         public User SearchUser(string userName)
         {
-            throw new NotImplementedException();
+            return _repo.SearchUser(userName);
         }
     }
 }

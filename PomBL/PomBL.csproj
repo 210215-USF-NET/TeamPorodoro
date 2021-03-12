@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PomModels\PomModels.csproj" />
+    <ProjectReference Include="..\PomDL\PomDL.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

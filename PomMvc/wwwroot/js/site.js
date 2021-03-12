@@ -22,7 +22,7 @@ const COLOR_CODES = {
     }
 };
 
-const TIME_LIMIT = 1500;
+const TIME_LIMIT = 15;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -52,11 +52,21 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-function onTimesUp() {
+function onLongTimesUp() {
     clearInterval(timerInterval);
+    TIME_LIMIT = 3;
+    timeLeft = 3;
+    startShortTimer();
 }
 
-function startTimer() {
+function onShortTimesUp() {
+    clearInterval(timerInterval);
+    TIME_LIMIT = 15;
+    timeLeft = 15;
+    startLongTimer();
+}
+
+function startLongTimer() {
     timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
         timeLeft = TIME_LIMIT - timePassed;
@@ -67,7 +77,23 @@ function startTimer() {
         setRemainingPathColor(timeLeft);
 
         if (timeLeft === 0) {
-            onTimesUp();
+            onLongTimesUp();
+        }
+    }, 1000);
+}
+
+function startShortTimer() {
+    timerInterval = setInterval(() => {
+        timePassed = timePassed += 1;
+        timeLeft = TIME_LIMIT - timePassed;
+        document.getElementById("base-timer-label").innerHTML = formatTime(
+            timeLeft
+        );
+        setCircleDasharray();
+        setRemainingPathColor(timeLeft);
+
+        if (timeLeft === 0) {
+            onShortTimesUp();
         }
     }, 1000);
 }

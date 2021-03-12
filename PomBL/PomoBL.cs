@@ -7,7 +7,7 @@ using PomModels;
 
 namespace PomBL
 {
-    public class PomBL : IPomBL
+    public class PomoBL : IPomBL
     {
         public NoteRecord CreateNoteRecord(NoteRecord newNoteRecord)
         {

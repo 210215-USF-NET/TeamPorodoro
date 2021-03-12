@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PomModels
 {
-    class Pomodoro
+    public class Pomodoro
     {
         public string UserName { get; set; }
         public DateTime CreationTime { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SModels
+namespace PomModels
 {
     /// <summary>
     /// Model for a User. Has properties for Id, Username, FirstName, and LastName

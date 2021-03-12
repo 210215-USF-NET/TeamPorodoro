@@ -42,16 +42,21 @@ namespace PomMvc.Controllers
         // POST: NoteController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(NoteCRVM newNote)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    _pomBL.CreateNoteRecord(_mapper.cast2NoteRecord(newNote));
+                    return RedirectToAction(nameof(Index));
+                }
+                catch
+                {
+                    return View();
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: NoteController/Edit/5

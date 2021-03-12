@@ -32,6 +32,12 @@ namespace PomMvc.Controllers
             return View();
         }
 
+        public ActionResult ViewNotes(string username)
+        {
+            ViewBag.username = username;
+            return View();
+        }
+
         // GET: NoteController/Create
         public ActionResult Create()
         {

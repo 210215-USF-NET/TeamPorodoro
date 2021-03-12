@@ -15,9 +15,18 @@
                     <h4 class="my-0 fw-normal">View your notes</h4>
                 </div>
                 <div class="card-body">
-
+                    <form asp-action="Create">
+                        <div class="form-group">
+                            <label asp-for="Username" class="control-label"></label>
+                            <input asp-for="Username" class="form-control" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Register" class="btn btn-primary" />
+                        </div>
+                    </form>
                     <h1 class="card-title pricing-card-title"></h1>
-                    <form><button type="submit" class="w-100 btn btn-lg btn-primary" asp-controller="Note" asp-action="Index">Create a brand new Note!</button></form>
+                    <button type="submit" class="w-100 btn btn-lg btn-primary" asp-controller="Note" asp-action="Index">Create a brand new Note!</button>
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@ const COLOR_CODES = {
     }
 };
 
-const TIME_LIMIT = 15;
+const TIME_LIMIT = 1500;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -48,15 +48,17 @@ document.getElementById("app").innerHTML = `
 
 function onLongTimesUp() {
     clearInterval(timerInterval);
-    TIME_LIMIT = 3;
-    timeLeft = 3;
+    timePassed = 0;
+    timeLeft = 300;
+    setRemainingPathColor(timeLeft);
     startShortTimer();
 }
 
 function onShortTimesUp() {
     clearInterval(timerInterval);
-    TIME_LIMIT = 15;
-    timeLeft = 15;
+    timePassed = 0;
+    timeLeft = 1500;
+    setRemainingPathColor(timeLeft);
     startLongTimer();
 }
 

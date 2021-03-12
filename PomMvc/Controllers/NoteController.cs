@@ -32,6 +32,11 @@ namespace PomMvc.Controllers
             return View();
         }
 
+        public ActionResult ViewNotes(string username)
+        {
+            return View(_pomBL.GetNoteRecords(username).Select(n => _mapper.cast2NoteCRVM(n)).ToList());
+        }
+
         // GET: NoteController/Create
         public ActionResult Create()
         {

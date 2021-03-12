@@ -21,7 +21,7 @@ namespace PomMvc.Controllers
         // GET: UserController
         public ActionResult Index()
         {
-            return View();
+            return View(_pomBL.GetUsers().Select(user => _mapper.cast2UserCRVM(user)).ToList());
         }
 
         // GET: UserController/Details/5
@@ -33,22 +33,27 @@ namespace PomMvc.Controllers
         // GET: UserController/Create
         public ActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: UserController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(UserCRVM newUser)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    _pomBL.CreateUser(_mapper.cast2User(newUser));
+                    return RedirectToAction(nameof(Index));
+                }
+                catch
+                {
+                    return View();
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: UserController/Edit/5

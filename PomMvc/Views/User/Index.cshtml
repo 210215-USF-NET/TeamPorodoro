@@ -1,7 +1,47 @@
-﻿@{
-    ViewData["Title"] = "Productivity Helper";
+﻿@model IEnumerable<PomMvc.Models.UserCRVM>
+
+@{
+    ViewData["Title"] = "All Users";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome To Productivity Helper</h1>
-</div>
+<h1>All Users</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserLastName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserUserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserFirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserLastName)
+                </td>
+                <td>
+                    @Html.ActionLink("View Notes", "ViewNotes", "Note", new { username = item.UserUserName })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -9,10 +9,10 @@ namespace PomMvc.Models
 {
     public class NoteCRVM
     {
-        [DisplayName("UserName")]
+        [DisplayName("Enter your Username:")]
         [Required]
         public string UserName { get; set; }
-        [DisplayName("Note")]
+        [DisplayName("Enter your Note:")]
         [Required]
         public string Note { get; set; }
     }

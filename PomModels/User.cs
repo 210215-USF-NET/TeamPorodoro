@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PomModels
 {
@@ -11,5 +12,7 @@ namespace PomModels
         public string UserUserName { get; set; }
         public string UserFirstName { get; set; }
         public string UserLastName { get; set; }
+        public ICollection<Pomodoro> Pomodoros { get; set; }
+        public ICollection<NoteRecord> NoteRecords { get; set; }
     }
 }

@@ -8,7 +8,6 @@ using Microsoft.Extensions.Logging;
 using PomMvc.Models;
 using PomBL;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 namespace PomMvc.Controllers
 {

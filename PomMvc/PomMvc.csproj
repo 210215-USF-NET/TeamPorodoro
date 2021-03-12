@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PomBL\PomBL.csproj" />
-	<ProjectReference Include="..\PomDL\PomDL.csproj" />
+    <ProjectReference Include="..\PomDL\PomDL.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

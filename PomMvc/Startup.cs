@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PomBL;
 using PomDL;
+using PomMvc.Models;
 
 namespace PomMvc
 {
@@ -30,7 +31,7 @@ namespace PomMvc
             services.AddDbContext<PomDBContext>( options => options.UseNpgsql(Configuration.GetConnectionString("PomodoroApp")));
             services.AddScoped<IPomBL, PomoBL>();
             services.AddScoped<IPomRepo, PomRepoDB>();
-            //services.AddScoped<IMapper, Mapper>();
+            services.AddScoped<IMapper, Mapper>();
             services.AddDistributedMemoryCache();
         }
 

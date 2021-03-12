@@ -1,3 +1,39 @@
 @{
     ViewData["Title"] = "Notes";
 }
+
+<main class="container">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Welcome back!</h1>
+        <p class="lead">Choose below to browse our products, or you can also view the details of your previous orders.</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 mb-3 text-center">
+        <div class="col">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 fw-normal">View your notes</h4>
+                </div>
+                <div class="card-body">
+
+                    <h1 class="card-title pricing-card-title"></h1>
+                    <form><button type="submit" class="w-100 btn btn-lg btn-primary" asp-controller="Note" asp-action="Index">Create a brand new Note!</button></form>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 fw-normal">Order History</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">Create a Note</h1>
+                    <form><button type="submit" class="w-100 btn btn-lg btn-outline-primary" asp-controller="Note" asp-action="Create">View my Orders</button></form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    </footer>
+</main>

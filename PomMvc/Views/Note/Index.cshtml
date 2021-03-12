@@ -17,11 +17,10 @@
                 <div class="card-body">
                     <form>
                         <div class="form-group">
-                            <label name="username" class="control-label"></label>
                             <input name="username" class="form-control" />
                         </div>
                         <h1 class="card-title pricing-card-title"></h1>
-                        <button type="submit" class="w-100 btn btn-lg btn-primary" asp-controller="Note" asp-action="ViewNotes">Create a brand new Note!</button>
+                        <button type="submit" class="w-100 btn btn-lg btn-primary" asp-controller="Note" asp-action="ViewNotes">View</button>
                     </form>
                 </div>
             </div>
@@ -29,11 +28,11 @@
         <div class="col">
             <div class="card mb-4 shadow-sm">
                 <div class="card-header">
-                    <h4 class="my-0 fw-normal">Order History</h4>
+                    <h4 class="my-0 fw-normal">Make a New Note</h4>
                 </div>
                 <div class="card-body">
                     <h1 class="card-title pricing-card-title">Create a Note</h1>
-                    <form><button type="submit" class="w-100 btn btn-lg btn-outline-primary" asp-controller="Note" asp-action="Create">View my Orders</button></form>
+                    <form><button type="submit" class="w-100 btn btn-lg btn-outline-primary" asp-controller="Note" asp-action="Create">Create</button></form>
                 </div>
             </div>
         </div>

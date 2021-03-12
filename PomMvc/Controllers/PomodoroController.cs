@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace PomMvc.Controllers
 {
-    public class PomoController : Controller
+    public class PomodoroController : Controller
     {
         private readonly IPomBL _pomBL;
         private readonly IMapper _mapper;
-        public PomoController(IPomBL pomBL, IMapper mapper)
+        public PomodoroController(IPomBL pomBL, IMapper mapper)
         {
             _pomBL = pomBL;
             _mapper = mapper;
